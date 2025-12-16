@@ -19,4 +19,11 @@ let halfPopulation = populationUkraine > 6000000;
 
 
 const description = `${country} is in ${continent}, and its ${populationUkraine} people speak ${language}`;
-console.log(description)
+// console.log(description)
+
+
+if ((language === 'english') && (populationUkraine < 50_000_000) && !isIsland) {
+    console.log('You should live in Ukraine')
+} else {
+    console.log(`${country} does not meet your criteria`)
+}

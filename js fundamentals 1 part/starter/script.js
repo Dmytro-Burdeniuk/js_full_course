@@ -136,25 +136,67 @@
 // console.log(century)
 // console.log()
 
-// type conversion
-const inputYear = '1991';
-console.log(Number(inputYear), inputYear);
-console.log(Number(inputYear) + 18);
+// // type conversion
+// const inputYear = '1991';
+// console.log(Number(inputYear), inputYear);
+// console.log(Number(inputYear) + 18);
 
-console.log(Number('Jonas')); //NaN
-console.log(typeof NaN);
+// console.log(Number('Jonas')); //NaN
+// console.log(typeof NaN);
 
-console.log(String(23), 23);
+// console.log(String(23), 23);
 
-// type coercion
-console.log('I am ' + 23 + ' years old.');
-console.log('23' - '10' + 3)
-console.log('23' * '2')
-console.log('23' / '2')
+// // type coercion
+// console.log('I am ' + 23 + ' years old.');
+// console.log('23' - '10' + 3)
+// console.log('23' * '2')
+// console.log('23' / '2')
 
-let n = '1' + 1 // 11
-n = n - 1 // 10
-console.log(n);
-alert('I am ' + n);
+// let n = '1' + 1 // 11
+// n = n - 1 // 10
+// console.log(n);
+// alert('I am ' + n);
 
-1143
+// 1143
+
+// let favorite = prompt('Enter your num')
+
+// if (favorite != 231) console.log('Why not 23')
+
+// let numNeighbours = Number(prompt('How many neighbour countries does your contry have?'));
+
+// if (numNeighbours === 1) {
+//     console.log('Only 1 border!');
+// } else if (numNeighbours > 1) {
+//     console.log('More than 1 border!');
+// } else {
+//     console.log('No borders')
+// }
+
+// const hasDriversLicence = true; 
+// const hasGoodVision = true;
+// const isTired = false;
+
+// const shouldDrive = (hasDriversLicence && hasGoodVision) && (!isTired !== false)
+
+// console.log(hasDriversLicence && hasGoodVision)
+// console.log(!hasDriversLicence || hasGoodVision)
+// console.log(shouldDrive)
+
+// if (shouldDrive) {
+//     console.log('Sarah is able to drive');
+// } else {
+//     console.log('Should not drive')
+// }
+
+// const scoreDolphins = (96 + 108 + 89) / 3;
+// const scoreKoalas = (88 + 91 + 110) / 3;
+
+// if (scoreDolphins > scoreKoalas) {
+//     console.log('Dolphins win the trophy')
+// } else if (scoreDolphins < scoreKoalas) {
+//     console.log('Koalas win the trophy')
+// } else {
+//     console.log('Both win the trophy')
+// }
+

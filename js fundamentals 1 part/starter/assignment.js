@@ -10,12 +10,13 @@ let populationFinland = 6_000_000
 
 const isIsland = false;
 const language = 'ukrainian';
-const description = country + ' has ' + populationUkraine + ' people and ' + populationFinland + ' speakers of ' + language;
-
 // console.log(typeof isIsland);
 // console.log(typeof population);
 // console.log(typeof country);
 // console.log(typeof language);
 
 let halfPopulation = populationUkraine > 6000000;
+
+
+const description = `${country} is in ${continent}, and its ${populationUkraine} people speak ${language}`;
 console.log(description)

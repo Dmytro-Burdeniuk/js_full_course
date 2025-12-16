@@ -58,9 +58,9 @@
 // job = 'programmer'
 
 
-const now = 2034;
-const ageDima = now - 2004;
-const ageSarah = now - 2016;
+// const now = 2034;
+// const ageDima = now - 2004;
+// const ageSarah = now - 2016;
 // console.log(ageDima, ageSarah);
 
 // console.log(ageDima * 2, ageDima / 10, ageDima ** 3);
@@ -87,11 +87,74 @@ const ageSarah = now - 2016;
 // console.log(now - 1991 > now - 2018)
 
 
+//
+// let x, y;
+// x = y = 25 - 10 - 5;
+//
+// console.log(x, y)
+//
+// const avarageAge = (ageDima + ageSarah) / 2;
+// console.log(ageDima, ageSarah, avarageAge);
 
-let x, y; 
-x = y = 25 - 10 - 5;
 
-console.log(x, y)
+// const firstName = 'Dima';
+// const job = 'Programmer';
+// const birthYear = 2004;
+// const year = 2025
+//
+//
+// const dima = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job;
+// console.log(dima);
+//
+// const dimaNew = `I'm ${firstName}, ${year-birthYear} years old ${job}`;
+// console.log(dimaNew);
+//
+// console.log(`just a regular string`)
+//
+// console.log(`String with
+// new line
+// new line1`)
 
-const avarageAge = (ageDima + ageSarah) / 2;
-console.log(ageDima, ageSarah, avarageAge);
+// const age = 14;
+//
+// if (age >= 18) {
+//     console.log('Dima can start driving 🚗');
+// } else {
+//     const yearsLeft = 18 - age;
+//     console.log(`Dima is too young, wait another ${yearsLeft} years`);
+// }
+//
+// const birthYear = 2012;
+//
+// let century;
+// if (birthYear < 2000) {
+//     century = 20;
+// } else {
+//     century = 21
+// }
+//
+// console.log(century)
+// console.log()
+
+// type conversion
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jonas')); //NaN
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// type coercion
+console.log('I am ' + 23 + ' years old.');
+console.log('23' - '10' + 3)
+console.log('23' * '2')
+console.log('23' / '2')
+
+let n = '1' + 1 // 11
+n = n - 1 // 10
+console.log(n);
+alert('I am ' + n);
+
+1143

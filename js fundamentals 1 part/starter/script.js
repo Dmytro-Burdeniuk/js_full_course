@@ -46,15 +46,52 @@
 // console.log(typeof null)
 
 
-let age = 30;
-age = 31;
+// let age = 30;
+// age = 31;
 
-let year;
-year = 2025;
+// let year;
+// year = 2025;
 
-const birthYear = 2004;
+// const birthYear = 2004;
 
-var job = 'programmer';
-job = 'programmer'
+// var job = 'programmer';
+// job = 'programmer'
 
 
+const now = 2034;
+const ageDima = now - 2004;
+const ageSarah = now - 2016;
+// console.log(ageDima, ageSarah);
+
+// console.log(ageDima * 2, ageDima / 10, ageDima ** 3);
+
+// const firstName = 'Dima';
+// const lastName = 'Burdeniuk';
+
+// console.log(firstName + ' ' + lastName);
+
+
+//
+// let x = 10 + 5;
+// x += 10
+// x *= 4
+// x++ // x + 1
+// x-- // x - 1
+// console.log(x);
+
+// console.log(ageDima > ageSarah);
+// console.log(ageSarah >= 18);
+
+// const isFullAge = ageSarah >= 18
+
+// console.log(now - 1991 > now - 2018)
+
+
+
+let x, y; 
+x = y = 25 - 10 - 5;
+
+console.log(x, y)
+
+const avarageAge = (ageDima + ageSarah) / 2;
+console.log(ageDima, ageSarah, avarageAge);

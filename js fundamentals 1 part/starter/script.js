@@ -37,10 +37,24 @@
 
 // javascriptIsFun = 'Yes';
 
+// let year;
+// console.log(typeof year);
+
+// year = 1991;
+// console.log(typeof year);
+
+// console.log(typeof null)
+
+
+let age = 30;
+age = 31;
+
 let year;
-console.log(typeof year);
+year = 2025;
 
-year = 1991;
-console.log(typeof year);
+const birthYear = 2004;
 
-console.log(typeof null)
+var job = 'programmer';
+job = 'programmer'
+
+

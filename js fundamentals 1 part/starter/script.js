@@ -200,3 +200,62 @@
 //     console.log('Both win the trophy')
 // }
 
+// const day = 'tuesday';
+
+// switch(day) {
+//     case 'monday':
+//         console.log('Plan course');
+//         console.log('Coding');
+//         break;
+//     case 'tuesday':
+//         console.log('Prepare for uni');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Write code examples')
+//         break;
+//     case 'friday':
+//         console.log('Drinking with friends')
+//         break;
+//     default:
+//         console.log('Not a day')
+
+// }
+
+
+// if (day === 'monday') {
+//     console.log('Plan course');
+//     console.log('Coding');
+// } else if (day === 'tuesday') { 
+//     console.log('Prepare for uni');
+// } else if (day === 'wednesday' || day === 'thursday') {
+//     console.log('Write code examples')   
+// } else if (day == 'friday') {
+//     console.log('Drinking with friends')
+// } else {
+//     console.log('Not a day')
+// }
+
+
+// const age = 18;
+// age >= 18 ? console.log('You are adult') : console.log('You are not adult')
+// let exp = age >= 18 ? 12 : 13
+// console.log(exp)
+
+// let drink2;
+// if (age >= 18) {
+//     drink2 = 'wine'
+// } else {
+//     drink2 = 'water'
+// }
+
+// console.log(drink2)
+// console.log(`I like to drink ${age >= 18 ? 12 : 13}`)
+
+const bill = 275;
+
+let tipDiscount = (bill > 50 && bill < 300) ? 15 : 20;
+let tip = bill * (tipDiscount / 100);
+let finalBill = bill + tip;
+
+console.log(`Thee bill was ${bill}, the tip was ${tip}, and the total value${finalBill}`)

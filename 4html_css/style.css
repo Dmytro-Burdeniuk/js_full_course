@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: yellowgreen;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p.first {
+  color: bisque;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+form#your-name {
+  background-color: blueviolet;
+  border: 5px solid #4444;
+  width: 400px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  background-color: pink;
+}
+
+#your-name h2 {
+  color: olive;
+}
+
+#random-image {
+  width: 300px;
+  height: 300px
+}

@@ -18,7 +18,7 @@ score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
-const scores = [0, 0];
+let scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
@@ -43,6 +43,7 @@ function handleRoll() {
 
 function switchPlayer() {
   if (!playing) return;
+  console.log('switch working');
 
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
@@ -54,13 +55,14 @@ function switchPlayer() {
 
 function holdScore() {
   if (!playing) return;
+  console.log('working hold');
 
   scores[activePlayer] += currentScore;
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
 
   checkWinner();
-  switchPlayer();
+  // switchPlayer();
 }
 
 function checkWinner() {
@@ -82,8 +84,33 @@ function checkWinner() {
   }
 }
 
+function newGame() {
+  console.log('working');
+  playing = true;
+  activePlayer = 0;
+  scores = [0, 0];
+  currentScore = 0;
+
+  diceEl.classList.add('hidden');
+
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+}
+
 // Rolling dice functionality
 btnRoll.addEventListener('click', handleRoll);
 
 // Holding functionality
 btnHold.addEventListener('click', holdScore);
+
+// Starting new game
+btnNew.addEventListener('click', newGame);

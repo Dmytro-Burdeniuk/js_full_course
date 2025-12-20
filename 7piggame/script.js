@@ -85,7 +85,6 @@ function checkWinner() {
 }
 
 function newGame() {
-  console.log('working');
   playing = true;
   activePlayer = 0;
   scores = [0, 0];

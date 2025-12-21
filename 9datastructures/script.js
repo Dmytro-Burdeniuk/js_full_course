@@ -69,35 +69,39 @@ const restaurant = {
   },
 };
 
-console.log('----- OR ------');
-// Use ANY data type, return ANY data type, short-circuiting
-console.log(3 || 'Dima');
-console.log('' || 'Dima');
-console.log(true || 0);
-console.log(undefined || null);
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovani Rossi',
+};
 
-restaurant.numGuests = 0;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
-
-const guests2 = restaurant.numGuests || 10
-console.log(guests2);
-
-console.log('----- AND -----');
-console.log(0 && 'Dima');
-console.log(7 && 'Dima');
-
-console.log('Dima' && 23 && null && 'dima');
-
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach')
-}
-
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach')
+// OR assignemnt 
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
 
 
+// nullish assignment (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+rest1.owner &&= 'ANONYMOUS'
+rest2.owner &&= 'ANONYMOUS'
+
+console.log(rest1);
+console.log(rest2);
+
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10
+// console.log(guests);
+
+// const guestsCorrect = restaurant.numGuests ?? 10
+// console.log(guestsCorrect);
 
 // // restaurant.orderDelivery({
 // //   time: '22:30',

@@ -288,17 +288,27 @@ const books = [
 // spellWord('JavaScript')
 
 // 4.1
-const [mainKeyword, ...rest] = books[0].keywords;
-console.log(mainKeyword, rest);
+// const [mainKeyword, ...rest] = books[0].keywords;
+// console.log(mainKeyword, rest);
 
-// 4.2
-const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+// // 4.2
+// const { publisher: bookPublisher, ...restOfTheBook } = books[1];
 
-console.log(bookPublisher, restOfTheBook);
+// console.log(bookPublisher, restOfTheBook);
 
-// 4.3
-const printBookAuthorsCount = function (title, ...authors) {
-    console.log(`The book "${title}" has ${authors.length} authors`);
-};
+// // 4.3
+// const printBookAuthorsCount = function (title, ...authors) {
+//     console.log(`The book "${title}" has ${authors.length} authors`);
+// };
 
-printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+// printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+
+function hasExamplesInJava(book) {
+  return book.programmingLanguage === 'Java' || 'no data';
+}
+
+hasExamplesInJava(books[0]);
+
+for (let i = 0; i < books.length; i++) {
+    console.log(books[i].onlineContent && `${books[i].title} provides online content`);
+}

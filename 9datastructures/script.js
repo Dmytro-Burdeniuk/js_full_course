@@ -66,8 +66,38 @@ const restaurant = {
 
   orderPizza: function (mainIng, ...otherIngs) {
     console.log(mainIng, otherIngs);
-  }
+  },
 };
+
+console.log('----- OR ------');
+// Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Dima');
+console.log('' || 'Dima');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10
+console.log(guests2);
+
+console.log('----- AND -----');
+console.log(0 && 'Dima');
+console.log(7 && 'Dima');
+
+console.log('Dima' && 23 && null && 'dima');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach')
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach')
+
+
 
 // // restaurant.orderDelivery({
 // //   time: '22:30',
@@ -184,26 +214,25 @@ const restaurant = {
 // restaurantCopy.name = 'Ristorante Roma';
 
 // SPREAD, right side
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-// REST, left side
-const [a, b, ...others] = [1, 2, 3, 4, 5];
+// // REST, left side
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
 
-const { sat, ...weekdays } = restaurant.openingHours;
-// console.log((weekdays));
+// const { sat, ...weekdays } = restaurant.openingHours;
+// // console.log((weekdays));
 
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i]
-  }
-  console.log(sum);
-};
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i]
+//   }
+//   console.log(sum);
+// };
 
-
-restaurant.orderPizza('Cheese', 'Olives', 'Salami')
+// restaurant.orderPizza('Cheese', 'Olives', 'Salami')

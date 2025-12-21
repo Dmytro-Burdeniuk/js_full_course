@@ -62,18 +62,40 @@
 
 // Example
 
-if (!numProducts) deleteShoppingCart();
+//
 
-var numProducts = 10;
+// console.log(this);
 
-function deleteShoppingCart() {
-  console.log('All products deleted');
-}
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
 
-var x = 1;
-let y = 2;
-const z = 3;
+// calcAge(1991);
 
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(z === window.z);
+// const calcAgeArrow = birthYear => {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+
+// calcAgeArrow(1996);
+
+const dima = {
+  year: 1991,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+
+// dima.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = dima.calcAge
+matilda.calcAge()
+
+const f = dima.calcAge;
+f();

@@ -80,22 +80,58 @@
 
 // calcAgeArrow(1996);
 
+// dima.calcAge();
+
+// const matilda = {
+//   year: 2017,
+// };
+
+// matilda.calcAge = dima.calcAge
+// matilda.calcAge()
+
+// const f = dima.calcAge;
+// f();
+
+// var firstName = 'Matilda'
+
 const dima = {
+  firstName: 'Dima',
   year: 1991,
   calcAge: function () {
     // console.log(this);
     console.log(2037 - this.year);
+
+    // Solution 1
+    // const self = this; // Before ES6
+    // const isMill = function () {
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    // Solution 2
+    const isMill = () => {
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+
+    isMill();
   },
+
+  greet: () => console.log(this.firstName),
 };
 
-// dima.calcAge();
+dima.greet();
+dima.calcAge();
 
-const matilda = {
-  year: 2017,
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
 };
 
-matilda.calcAge = dima.calcAge
-matilda.calcAge()
+addExpr(2, 5);
+addExpr(2, 5, 7, 10);
 
-const f = dima.calcAge;
-f();
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b
+}
+
+addArrow(2, 5, 8)

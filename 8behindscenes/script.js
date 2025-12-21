@@ -94,44 +94,95 @@
 
 // var firstName = 'Matilda'
 
-const dima = {
-  firstName: 'Dima',
-  year: 1991,
-  calcAge: function () {
-    // console.log(this);
-    console.log(2037 - this.year);
+// const dima = {
+//   firstName: 'Dima',
+//   year: 1991,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2037 - this.year);
 
-    // Solution 1
-    // const self = this; // Before ES6
-    // const isMill = function () {
-    //   console.log(self.year >= 1981 && self.year <= 1996);
-    // };
+//     // Solution 1
+//     // const self = this; // Before ES6
+//     // const isMill = function () {
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     // };
 
-    // Solution 2
-    const isMill = () => {
-      console.log(this.year >= 1981 && this.year <= 1996);
-    };
+//     // Solution 2
+//     const isMill = () => {
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
 
-    isMill();
-  },
+//     isMill();
+//   },
 
-  greet: () => console.log(this.firstName),
+//   greet: () => console.log(this.firstName),
+// };
+
+// dima.greet();
+// dima.calcAge();
+
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addExpr(2, 5);
+// addExpr(2, 5, 7, 10);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b
+// }
+
+// addArrow(2, 5, 8)
+
+const jessica1 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
 };
 
-dima.greet();
-dima.calcAge();
-
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-
-addExpr(2, 5);
-addExpr(2, 5, 7, 10);
-
-var addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b
+function marryPerson(originalPerson, newLastName) {
+  originalPerson.lastName = newLastName;
+  return originalPerson;
 }
 
-addArrow(2, 5, 8)
+// console.log('Before changing', jessica);
+
+// const marriedJessica = marryPerson(jessica, 'Davis');
+
+// const marriedJessica = jessica;
+// marriedJessica.lastName = 'Davis';
+
+// console.log('Original', jessica);
+// console.log('New', marriedJessica);
+
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+
+// Shallow copy
+// const jessicaCopy = { ...jessica2 };
+// jessicaCopy.lastName = 'Davis';
+
+// console.log('Original', jessica2);
+// console.log('Copy', jessicaCopy);
+
+// jessicaCopy.family.push('Mary')
+// jessicaCopy.family.push('John')
+
+// console.log('Original', jessica2);
+// console.log('Copy', jessicaCopy);
+
+// Deep copy
+const jessicaClone = structuredClone(jessica2)
+
+jessicaClone.family.push('Mary')
+jessicaClone.family.push('John')
+
+console.log('Original', jessica2);
+console.log('Copy', jessicaClone);

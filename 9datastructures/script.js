@@ -59,20 +59,24 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-restaurant.orderDelivery({
-  address: 'Via del Sole, 21',
-  time: '20:30',
-  starterIndex: 1,
-});
+// restaurant.orderDelivery({
+//   address: 'Via del Sole, 21',
+//   time: '20:30',
+//   starterIndex: 1,
+// });
 
 const { name, openingHours, categories } = restaurant;
 // console.log(name, openingHours, categories);
@@ -136,3 +140,42 @@ const {
 
 // const [p=1, q=1, r=1] = [8, 9];
 // console.log(p, q, r);
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+
+const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
+
+// Copy array
+const mainMenyCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays
+const menuJoin = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menuJoin);
+
+// Iterables: arrays, strings, maps, sets, NOT OBJECTS
+
+const str = 'Dima';
+const letters = [...str];
+
+// console.log(letters);
+
+// const ingredients = prompt('Enter your ingredients');
+// const ingList = ingredients.split(', ');
+
+// restaurant.orderPasta(...ingList);
+
+// Objects
+
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+

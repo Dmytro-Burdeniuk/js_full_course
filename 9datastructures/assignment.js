@@ -270,9 +270,21 @@ const books = [
 
 // 2.6
 
-function printBookInfo({ title, author, year = 'year unknown' }) {
-    console.log(`${title} by ${author}, ${year}`);
-}
+// function printBookInfo({ title, author, year = 'year unknown' }) {
+//     console.log(`${title} by ${author}, ${year}`);
+// }
 
-printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });
-printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
+// printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });
+// printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
+
+// 3.1
+// const bookAuthors = [...books[0].author, ...books[1].author]
+// console.log(bookAuthors);
+
+// 3.2
+// function spellWord (str) {
+//     console.log(...str);
+// }
+// spellWord('JavaScript')
+
+// 3.3

@@ -4,7 +4,6 @@
 // const flights =
 //   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
@@ -51,7 +50,6 @@ const restaurant = {
   },
 };
 
-
 const italianFoods = new Set([
   'pasta',
   'gnocchi',
@@ -70,21 +68,39 @@ const mexicanFoods = new Set([
   'garlic',
 ]);
 
-// Present in both
-const commonFoods = italianFoods.intersection(mexicanFoods)
-console.log(`Present in both`, commonFoods);
+const question = new Map([
+  ['question', 'What is the best language'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again'],
+]);
 
-// All elements without duplicates
-const italianMexicanFusion = italianFoods.union(mexicanFoods);
-console.log(`All elements, no duplicates`, italianMexicanFusion);
+console.log(question);
 
-// console.log(new Set([...italianFoods, ...mexicanFoods]));
+console.log(Object.entries(openingHours));
 
-const uniqueItalianFoods = italianFoods.difference(mexicanFoods)
-console.log('Difference italina', uniqueItalianFoods);
+const hoursMap = new Map(Object.entries(openingHours));
 
-const uniqueMexicanFoods = mexicanFoods.difference(italianFoods)
-console.log('Difference italina', uniqueMexicanFoods);
+console.log(hoursMap);
 
-const uniqueItalianAndMexicanFoods = italianFoods.symmetricDifference(mexicanFoods)
-console.log(uniqueItalianAndMexicanFoods);
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+// const answer = Number(prompt('Your answer'));
+const answer = 3;
+
+if (answer === question.get('correct')) {
+  console.log(question.get(true));
+} else console.log(question.get(false));
+
+console.log(...question);
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());

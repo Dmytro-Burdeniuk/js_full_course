@@ -291,12 +291,20 @@ const game = {
 
 // console.log(rest.get([1,2]));
 
-const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']])
-bookMap.set('pages', 464)
-const title = bookMap.get('title')
-const author = bookMap.get('author')
-console.log(bookMap.size);
+// const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']])
+// bookMap.set('pages', 464)
+// const title = bookMap.get('title')
+// const author = bookMap.get('author')
+// console.log(bookMap.size);
 
-if (bookMap.has('author')) {
-    console.log('Map has author');
+// if (bookMap.has('author')) {
+//     console.log('Map has author');
+// }
+
+const firstBookMap = new Map(Object.entries(books[0]));
+
+for (const [key, value] of firstBookMap) {
+  if (typeof value === 'number') {
+    console.log(key, value);
+  }
 }

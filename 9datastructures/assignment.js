@@ -415,3 +415,27 @@ const books = [
 // // 7
 // team1 < team2 && console.log('Team 1 is more likely to win');
 // team1 > team2 && console.log('Team 2 is more likely to win');
+
+// let pageSum = 0;
+
+// for (const book of books) {
+//     pageSum += book.pages
+// }
+
+// console.log(pageSum);
+
+const allAuthors = [];
+
+for (const book of books) {
+    if (typeof book.author === 'object') {
+        allAuthors.push(...book.author)
+    } else {
+        allAuthors.push(book.author)
+    }
+}
+
+// console.log(allAuthors);
+
+for (const [index, author] of allAuthors.entries()) {
+    console.log(`${index + 1} ${author}`);
+}

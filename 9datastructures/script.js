@@ -70,3 +70,11 @@ const restaurant = {
 };
 
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
+
+// for (const item of menu) console.log(item);
+
+for (const [index, item] of menu.entries()) {
+  // console.log(`${item[0] + 1}: ${item[1]}`);
+  console.log(`${index + 1}: ${item}`);
+}

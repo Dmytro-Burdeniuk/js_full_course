@@ -78,29 +78,30 @@ const question = new Map([
   [false, 'Try again'],
 ]);
 
-console.log(question);
+// console.log(question);
 
-console.log(Object.entries(openingHours));
+// console.log(Object.entries(openingHours));
 
-const hoursMap = new Map(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
 
-console.log(hoursMap);
+// console.log(hoursMap);
 
-console.log(question.get('question'));
-for (const [key, value] of question) {
-  if (typeof key === 'number') {
-    console.log(`Answer ${key}: ${value}`);
-  }
-}
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
 
-// const answer = Number(prompt('Your answer'));
-const answer = 3;
+// // const answer = Number(prompt('Your answer'));
+// const answer = 3;
 
-if (answer === question.get('correct')) {
-  console.log(question.get(true));
-} else console.log(question.get(false));
+// if (answer === question.get('correct')) {
+//   console.log(question.get(true));
+// } else console.log(question.get(false));
 
-console.log(...question);
-console.log(question.entries());
-console.log(question.keys());
-console.log(question.values());
+// console.log(...question);
+// console.log(question.entries());
+// console.log(question.keys());
+// console.log(question.values());
+

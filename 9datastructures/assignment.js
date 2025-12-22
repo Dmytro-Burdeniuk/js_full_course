@@ -266,45 +266,56 @@ const game = {
   },
 };
 
-// const rest = new Map();
-// rest.set('name', 'Classico Italiano');
-// rest.set(1, 'Firenze, Italy');
-// console.log(rest.set(2, 'Lisbon, Portugal'));
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
 
-// rest
-//   .set('open', 11)
-//   .set('close', 23)
-//   .set(true, 'We are open')
-//   .set(false, 'We are closed');
+/* 
+Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
 
-// console.log(rest.get('name'));
-// console.log(rest.get(true));
+1. Create an array 'events' of the different game events that happened (no duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+      [FIRST HALF] 17: ⚽️ GOAL
 
-// const time = 21;
-// rest.get(time > rest.get('open') && time < rest.get('close'));
+GOOD LUCK 😀
+*/
 
-// console.log(rest.has('open'));
-// rest.delete(2);
-// rest.set([1,2], 'Test');
-// console.log(rest);
-// console.log(rest.size);
+// const events = new Set(Object.values(gameEvents))
+// console.log(events);
+// const events = new Set(gameEvents.values())
+// console.log(events);
 
-// console.log(rest.get([1,2]));
+// const yellow = gameEvents.delete(64)
+// console.log(gameEvents);
+// let avgEvent = 0;
 
-// const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']])
-// bookMap.set('pages', 464)
-// const title = bookMap.get('title')
-// const author = bookMap.get('author')
-// console.log(bookMap.size);
-
-// if (bookMap.has('author')) {
-//     console.log('Map has author');
+// for (const x of gameEvents.keys()) {
+//   avgEvent += x;
+//   console.log(x);
 // }
+// console.log(avgEvent / 90);
 
-const firstBookMap = new Map(Object.entries(books[0]));
+// const time = [...gameEvents.keys()].pop()
+// console.log(time);
 
-for (const [key, value] of firstBookMap) {
-  if (typeof value === 'number') {
-    console.log(key, value);
-  }
+let resultArray = [];
+
+for (const [key, value] of gameEvents) {
+    if (key <= 45) {
+        resultArray.push(`FIRST HALF ${key}: ${value}`)
+    } else resultArray.push(`SECOND HALF ${key}: ${value}`)
 }
+
+console.log(resultArray);

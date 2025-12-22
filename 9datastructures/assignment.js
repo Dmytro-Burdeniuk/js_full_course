@@ -424,18 +424,25 @@ const books = [
 
 // console.log(pageSum);
 
-const allAuthors = [];
+// const allAuthors = [];
 
-for (const book of books) {
-    if (typeof book.author === 'object') {
-        allAuthors.push(...book.author)
-    } else {
-        allAuthors.push(book.author)
-    }
+// for (const book of books) {
+//     if (typeof book.author === 'object') {
+//         allAuthors.push(...book.author)
+//     } else {
+//         allAuthors.push(book.author)
+//     }
+// }
+
+// // console.log(allAuthors);
+
+// for (const [index, author] of allAuthors.entries()) {
+//     console.log(`${index + 1} ${author}`);
+// }
+
+
+function getFirstKeyword (book) {
+    console.log(book.keywords?.[0] ?? 'No keyword')
 }
 
-// console.log(allAuthors);
-
-for (const [index, author] of allAuthors.entries()) {
-    console.log(`${index + 1} ${author}`);
-}
+getFirstKeyword(books[5])

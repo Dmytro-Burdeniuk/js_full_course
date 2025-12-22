@@ -22,7 +22,7 @@ const mexicanFoods = new Set([
   'garlic',
 ]);
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const hours = {
   [weekdays[3]]: {
@@ -67,3 +67,23 @@ const restaurant = {
     console.log(mainIng, otherIngs);
   },
 };
+
+// console.log(restaurant.hours.mon?.open);
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   // console.log(day);
+//   open = restaurant.hours[day]?.open ?? 'closed'
+//   console.log(`On ${day} we open at ${open}`);
+// }
+
+// Methods
+// console.log(restaurant.orderRissoto?.(0,1) ?? 'Method does not exist');
+
+// Arrays 
+const users = [
+  {name: 'Jonas', email: 'hello@dima.io'}
+]
+
+console.log(users[0]?.name ?? 'No name');

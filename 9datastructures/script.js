@@ -24,7 +24,7 @@ const mexicanFoods = new Set([
 
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-const hours = {
+const openingHours = {
   [weekdays[3]]: {
     open: 12,
     close: 22,
@@ -47,7 +47,7 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  hours,
+  openingHours,
 
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -68,22 +68,19 @@ const restaurant = {
   },
 };
 
-// console.log(restaurant.hours.mon?.open);
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-// for (const day of days) {
-//   // console.log(day);
-//   open = restaurant.hours[day]?.open ?? 'closed'
-//   console.log(`On ${day} we open at ${open}`);
+// for (const day of properties) {
+//   console.log(day);
 // }
 
-// Methods
-// console.log(restaurant.orderRissoto?.(0,1) ?? 'Method does not exist');
+// const values = Object.values(openingHours);
+// console.log(values);
 
-// Arrays 
-const users = [
-  {name: 'Jonas', email: 'hello@dima.io'}
-]
+const entries = Object.entries(openingHours);
+console.log(entries);
 
-console.log(users[0]?.name ?? 'No name');
+for (const [key, {open, close}] of entries) {
+  console.log(`On ${key} we open ${open} and close ${close}`);
+}

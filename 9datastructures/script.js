@@ -4,23 +4,6 @@
 // const flights =
 //   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-const italianFoods = new Set([
-  'pasta',
-  'gnocchi',
-  'tomatoes',
-  'olive oil',
-  'garlic',
-  'basil',
-]);
-
-const mexicanFoods = new Set([
-  'tortillas',
-  'beans',
-  'rice',
-  'tomatoes',
-  'avocado',
-  'garlic',
-]);
 
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -68,19 +51,40 @@ const restaurant = {
   },
 };
 
-// const properties = Object.keys(openingHours);
-// console.log(properties);
 
-// for (const day of properties) {
-//   console.log(day);
-// }
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
 
-// const values = Object.values(openingHours);
-// console.log(values);
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
 
-const entries = Object.entries(openingHours);
-console.log(entries);
+// Present in both
+const commonFoods = italianFoods.intersection(mexicanFoods)
+console.log(`Present in both`, commonFoods);
 
-for (const [key, {open, close}] of entries) {
-  console.log(`On ${key} we open ${open} and close ${close}`);
-}
+// All elements without duplicates
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log(`All elements, no duplicates`, italianMexicanFusion);
+
+// console.log(new Set([...italianFoods, ...mexicanFoods]));
+
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods)
+console.log('Difference italina', uniqueItalianFoods);
+
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods)
+console.log('Difference italina', uniqueMexicanFoods);
+
+const uniqueItalianAndMexicanFoods = italianFoods.symmetricDifference(mexicanFoods)
+console.log(uniqueItalianAndMexicanFoods);

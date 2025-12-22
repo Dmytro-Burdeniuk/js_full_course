@@ -266,30 +266,37 @@ const game = {
   },
 };
 
-const allKeywords = [];
+// const rest = new Map();
+// rest.set('name', 'Classico Italiano');
+// rest.set(1, 'Firenze, Italy');
+// console.log(rest.set(2, 'Lisbon, Portugal'));
 
-for (let i = 0; i < Object.keys(books).length; i++) {
-  let currObj = books[i].keywords;
-  console.log(typeof currObj);
+// rest
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are open')
+//   .set(false, 'We are closed');
 
-  if (typeof currObj === 'object')
-    for (let n = 0; n < currObj.length; n++) {
-      allKeywords.push(currObj[n]);
-    }
-  else {
-    allKeywords.push(currObj);
-  }
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+
+// const time = 21;
+// rest.get(time > rest.get('open') && time < rest.get('close'));
+
+// console.log(rest.has('open'));
+// rest.delete(2);
+// rest.set([1,2], 'Test');
+// console.log(rest);
+// console.log(rest.size);
+
+// console.log(rest.get([1,2]));
+
+const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']])
+bookMap.set('pages', 464)
+const title = bookMap.get('title')
+const author = bookMap.get('author')
+console.log(bookMap.size);
+
+if (bookMap.has('author')) {
+    console.log('Map has author');
 }
-
-const setAllKeywords = new Set (allKeywords)
-
-setAllKeywords.add('coding')
-setAllKeywords.add('science')
-
-setAllKeywords.delete('business')
-
-const uniqueKeywordsArr = [...setAllKeywords]
-console.log(uniqueKeywordsArr);
-setAllKeywords.clear();
-console.log(setAllKeywords);
-

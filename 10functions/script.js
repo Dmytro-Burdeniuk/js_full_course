@@ -1,6 +1,5 @@
 'use strict';
 
-
 // const bookingArr = [];
 
 // const createBooking = function (
@@ -60,30 +59,43 @@
 
 // // JS is passing by value
 
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
+
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(' ');
+//   return [first.toUpperCase(), ...others].join(' ');
+// };
+
+// // Higher-order function
+// const transformer = function (str, fn) {
+//   console.log('Original string:', str);
+//   console.log(`Transformed string: ${fn(str)}`);
+
+//   console.log(`Transformer by: ${fn.name}`);
+// };
+
+// transformer('javascript is the best', upperFirstWord);
+// transformer('JavaS crip t', oneWord);
+
+// const high5 = function (str) {
+//   console.log(str);
+// };
+
+// document.body.addEventListener('click', high5);
+
+// ['Dima', 'Martha', 'Adam'].forEach(high5);
+
+const greet = (greeting) => {
+  return (name) => {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ');
-};
+const greeterHey = greet('Hey');
+greeterHey('Dima');
+greeterHey('Vlad');
 
-// Higher-order function
-const transformer = function (str, fn) {
-  console.log('Original string:', str);
-  console.log(`Transformed string: ${fn(str)}`);
+greet('Hello')('Jonas')
 
-  console.log(`Transformer by: ${fn.name}`);
-};
-
-transformer('javascript is the best', upperFirstWord);
-transformer('JavaS crip t', oneWord);
-
-const high5 = function (str) {
-  console.log(str);
-};
-
-document.body.addEventListener('click', high5);
-
-['Dima', 'Martha', 'Adam'].forEach(high5);

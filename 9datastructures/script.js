@@ -243,7 +243,6 @@ for (const eachFlight of flightsArr) {
   let newTime;
 
   let [type, from, to, time] = eachFlight.split(';');
-
   type = type.replaceAll('_', ' ');
 
   if (type.toLowerCase().includes('delayed')) {

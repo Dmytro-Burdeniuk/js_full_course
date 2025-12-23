@@ -360,21 +360,21 @@
 //     }
 // }
 
-const form = document.getElementById('lineForm');
-const textarea = document.getElementById('textInput');
+// const form = document.getElementById('lineForm');
+// const textarea = document.getElementById('textInput');
 
-function logResult(event) {
-  event.preventDefault();
-  const wordsArr = textarea.value.split('\n')
+// function logResult(event) {
+//   event.preventDefault();
+//   const wordsArr = textarea.value.split('\n')
 
-  for (const word of wordsArr) {
-    const cleanWord = word.trim().toLowerCase()
-    const firstWord = cleanWord.slice(0, cleanWord.indexOf('_'))
-    let secondWord = cleanWord.slice(cleanWord.lastIndexOf('_'), cleanWord.length).replace('_', '')
-    secondWord = secondWord[0].toUpperCase() + secondWord.slice(1, secondWord.length)
-    console.log(firstWord + secondWord);
+//   for (const word of wordsArr) {
+//     const cleanWord = word.trim().toLowerCase()
+//     const firstWord = cleanWord.slice(0, cleanWord.indexOf('_'))
+//     let secondWord = cleanWord.slice(cleanWord.lastIndexOf('_'), cleanWord.length).replace('_', '')
+//     secondWord = secondWord[0].toUpperCase() + secondWord.slice(1, secondWord.length)
+//     console.log(firstWord + secondWord);
     
-  }
-}
+//   }
+// }
 
-form.addEventListener('submit', logResult);
+// form.addEventListener('submit', logResult);

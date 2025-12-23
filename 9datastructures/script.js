@@ -1,9 +1,5 @@
 'use strict';
 
-// // Data needed for a later exercise
-// const flights =
-//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const openingHours = {
@@ -105,7 +101,7 @@ const question = new Map([
 // console.log(question.keys());
 // console.log(question.values());
 
-const airLine = 'TAP Air Portugal';
+// const airLine = 'TAP Air Portugal';
 // const plane = 'A320';
 
 // console.log(airLine.toLowerCase());
@@ -193,44 +189,75 @@ const airLine = 'TAP Air Portugal';
 // console.log('a+very+nice+string'.split('+'));
 // console.log('Dima Burdeniuk'.split(' '));
 
-const [firstName, lastName] = 'Dima Burdeniuk'.split(' ');
+// const [firstName, lastName] = 'Dima Burdeniuk'.split(' ');
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-// console.log(newName);
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// // console.log(newName);
 
-const capitizeName = function (name) {
-  const names = name.split(' ');
-  let namesArray = [];
+// const capitizeName = function (name) {
+//   const names = name.split(' ');
+//   let namesArray = [];
 
-  for (const word of names) {
-    // namesArray.push(word[0].toUpperCase() + word.slice(1))
-    namesArray.push(word.replace(word[0], word[0].toUpperCase()));
-  }
-  console.log(namesArray.join(' '));
-};
+//   for (const word of names) {
+//     // namesArray.push(word[0].toUpperCase() + word.slice(1))
+//     namesArray.push(word.replace(word[0], word[0].toUpperCase()));
+//   }
+//   console.log(namesArray.join(' '));
+// };
 
 // capitizeName('jessica ann smith davis')
 // capitizeName('dima burdeniuk')
 
-const message = 'Go to gate 23!';
+// const message = 'Go to gate 23!';
 // console.log(message.padStart(25, '+').padEnd(30, '-'));
 // console.log('Jonas'.padStart(20, '+').padEnd(30, '-'));
 
-const maskCreditCard = function (number) {
-  const str = number + '';
-  const last = str.slice(-4)
-  return last.padStart(str.length, '*')
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4)
+//   return last.padStart(str.length, '*')
 
-};
+// };
 
-// console.log(maskCreditCard(141414141414141));
-// console.log(maskCreditCard('2131421414122141'));
+// // console.log(maskCreditCard(141414141414141));
+// // console.log(maskCreditCard('2131421414122141'));
 
-const message2 = 'Bad weather... All Departures Delayed... '
-console.log(message2.repeat(5));
+// const message2 = 'Bad weather... All Departures Delayed... '
+// console.log(message2.repeat(5));
 
-const planesInLine = function(n) {
-  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+// const planesInLine = function(n) {
+//   console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+// }
+
+// planesInLine(6)
+
+const flightsAPI =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const flightsArr = flightsAPI.split('+');
+
+for (const eachFlight of flightsArr) {
+  let newType;
+  let newFrom;
+  let newTo;
+  let newTime;
+
+  let [type, from, to, time] = eachFlight.split(';');
+
+  type = type.replaceAll('_', ' ');
+
+  if (type.toLowerCase().includes('delayed')) {
+    newType = type.replace(' ', '🔴 ');
+  } else {
+    newType = type.replace(' ', '');
+  }
+
+  newFrom = 'from ' + from.toUpperCase().replace(/\d+/g, '');
+
+  newTo = 'to ' + to.toUpperCase().replace(/\d+/g, '');
+
+  const [hour, min] = time.split(':');
+  newTime = `(${hour}h${min})`;
+
+  console.log(newType, newFrom, newTo, newTime);
 }
-
-planesInLine(6)

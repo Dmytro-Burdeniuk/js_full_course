@@ -1,5 +1,6 @@
 'use strict';
 
+
 // const bookingArr = [];
 
 // const createBooking = function (
@@ -28,33 +29,61 @@
 
 // createBooking('LM123', undefined, 1000);
 
-const flight = 'LH234';
-const dima = {
-  name: 'Dima Burdeniuk',
-  passport: 2323213,
+// const flight = 'LH234';
+// const dima = {
+//   name: 'Dima Burdeniuk',
+//   passport: 2323213,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = 'LH999';
+//   passenger.name = 'Mr. ' + passenger.name;
+
+//   if (passenger.passport === 2323213) {
+//     alert('Check in');
+//   } else alert('Wrong passport');
+
+// 	console.log(passenger.passport);
+// };
+
+// checkIn(flight, dima);
+
+// // console.log(flight);
+// // console.log(dima);
+
+// const newPassport = function (person) {
+//   person.passport = Math.trunc(Math.random() * 10000000);
+// };
+
+// newPassport(dima);
+// checkIn(flight, dima);
+
+// // JS is passing by value
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'LH999';
-  passenger.name = 'Mr. ' + passenger.name;
-
-  if (passenger.passport === 2323213) {
-    alert('Check in');
-  } else alert('Wrong passport');
-
-	console.log(passenger.passport);
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
 };
 
-checkIn(flight, dima);
+// Higher-order function
+const transformer = function (str, fn) {
+  console.log('Original string:', str);
+  console.log(`Transformed string: ${fn(str)}`);
 
-// console.log(flight);
-// console.log(dima);
-
-const newPassport = function (person) {
-  person.passport = Math.trunc(Math.random() * 10000000);
+  console.log(`Transformer by: ${fn.name}`);
 };
 
-newPassport(dima);
-checkIn(flight, dima);
+transformer('javascript is the best', upperFirstWord);
+transformer('JavaS crip t', oneWord);
 
-// JS is passing by value 
+const high5 = function (str) {
+  console.log(str);
+};
+
+document.body.addEventListener('click', high5);
+
+['Dima', 'Martha', 'Adam'].forEach(high5);

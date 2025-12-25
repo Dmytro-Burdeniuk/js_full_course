@@ -202,18 +202,36 @@
 
 // runOnce();
 
-(function () {
-  console.log('This will never run again');
-  const isPrivate = 23;
-})();
+// (function () {
+//   console.log('This will never run again');
+//   const isPrivate = 23;
+// })();
 
-// console.log(isPrivate);
+// // console.log(isPrivate);
 
-(() => console.log('This will ALSO never run again'))();
+// (() => console.log('This will ALSO never run again'))();
 
-{
-  const isPrivate = 23;
-  var notPrivate = 46;
+// {
+//   const isPrivate = 23;
+//   var notPrivate = 46;
+// }
+
+// console.log(notPrivate);
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++
+    console.log(passengerCount);
+  }
 }
 
-console.log(notPrivate);
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+booker();
+booker();
+booker();
